@@ -178,7 +178,8 @@ def run_autograder():
                 text=True, 
                 timeout=30,
                 encoding='utf-8',
-                errors='ignore'
+                errors='ignore',
+                env=os.environ
             )
             if result.returncode == 0:
                 print("[PASS] Script ran successfully with exit code 0")
@@ -202,7 +203,8 @@ def run_autograder():
                 text=True, 
                 timeout=30,
                 encoding='utf-8',
-                errors='ignore'
+                errors='ignore',
+                env=os.environ
             )
             output = result.stdout + "\n" + result.stderr
             passed_checks = len(re.findall(r"Passed", output, re.IGNORECASE))
