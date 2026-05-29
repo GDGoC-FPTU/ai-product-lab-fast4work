@@ -1,10 +1,11 @@
 # Lab 02 — Phase 3 & 5: AI Product Deep-Dive & Evaluation Report
 
 ## 👥 Khai báo thành viên Nhóm:
-* **Tên nhóm:** Vin Smart Future (GSM / Xanh SM Team)
+* **Tên nhóm:** **Fast4Work**
 * **Thành viên tham gia:**
-  1. Nguyễn Đức Mạnh — MSSV: [Điền MSSV của bạn vào đây] (AI Product Engineer)
-
+  1. Nguyễn Đình Tiến Mạnh - 2A202600907
+  2. Phạm Đức Liêm - 2A202600985
+  3. Nguyễn Thái Học - 2A202600909
 ---
 
 # 🗳️ Quyết định lựa chọn của nhóm:

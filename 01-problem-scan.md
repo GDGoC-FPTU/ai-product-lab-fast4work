@@ -1,7 +1,7 @@
 # Lab 02 — Phase 1 & 2: AI Problem Scan & Quick Assessment
 
 Họ và tên: Nguyễn Đức Mạnh  
-MSSV: [Điền MSSV của bạn vào đây]  
+MSSV: 
 Lớp: AI Product Lab  
 Nhóm: Vin Smart Future (GSM / Xanh SM)
 
