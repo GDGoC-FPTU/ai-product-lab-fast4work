@@ -5,7 +5,6 @@ import subprocess
 import importlib.util
 import re
 
-# Đảm bảo mã hóa UTF-8 cho stdout trên mọi nền tảng
 if sys.stdout.encoding != 'utf-8':
     try:
         import io
