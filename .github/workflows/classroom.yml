@@ -16,6 +16,8 @@ jobs:
     - name: Problem Scan
       id: problem-scan
       uses: classroom-resources/autograding-command-grader@v1
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
         test-name: Problem Scan
         setup-command: pip install -r requirements.txt
