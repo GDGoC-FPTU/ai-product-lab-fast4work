@@ -172,13 +172,15 @@ def run_autograder():
             print("[FAIL] Cannot find prompt_prototype.py")
             sys.exit(1)
         try:
+            # SỬA LỖI: Thêm env=os.environ để truyền API Key xuống tiến trình con
             result = subprocess.run(
                 [sys.executable, student_file_path], 
                 capture_output=True, 
                 text=True, 
                 timeout=30,
                 encoding='utf-8',
-                errors='ignore'
+                errors='ignore',
+                env=os.environ
             )
             if result.returncode == 0:
                 print("[PASS] Script ran successfully with exit code 0")
@@ -196,13 +198,15 @@ def run_autograder():
             print("[FAIL] Cannot find prompt_prototype.py")
             sys.exit(1)
         try:
+            # SỬA LỖI: Thêm env=os.environ để truyền API Key xuống tiến trình con
             result = subprocess.run(
                 [sys.executable, student_file_path], 
                 capture_output=True, 
                 text=True, 
                 timeout=30,
                 encoding='utf-8',
-                errors='ignore'
+                errors='ignore',
+                env=os.environ
             )
             output = result.stdout + "\n" + result.stderr
             passed_checks = len(re.findall(r"Passed", output, re.IGNORECASE))
@@ -281,7 +285,6 @@ def run_autograder():
             all_code_passed = False
             report.append("[FAIL] Khong tim thay file prompt_prototype.py de cham ma nguon (0.0/5.0d)")
         else:
-            # Nạp module của học viên
             student = None
             try:
                 student = load_student_module(student_file_path)
@@ -359,13 +362,15 @@ def run_autograder():
                 # 4. Kiểm tra khả năng thực thi của script (1.0đ)
                 process_output = ""
                 try:
+                    # SỬA LỖI: Thêm env=os.environ để truyền API Key xuống tiến trình con
                     result = subprocess.run(
                         [sys.executable, student_file_path], 
                         capture_output=True, 
                         text=True, 
                         timeout=30,
                         encoding='utf-8',
-                        errors='ignore'
+                        errors='ignore',
+                        env=os.environ
                     )
                     process_output = result.stdout + "\n" + result.stderr
                     
