@@ -1,4 +1,3 @@
 python-dotenv
 pytest
 google-genai 
-google-generativeai
