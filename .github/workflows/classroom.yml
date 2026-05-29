@@ -13,17 +13,17 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      
     - name: Problem Scan
       id: problem-scan
       uses: classroom-resources/autograding-command-grader@v1
-      env:
-        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
         test-name: Problem Scan
         setup-command: pip install -r requirements.txt
         command: python autograder/autograder.py --check-file-1
         timeout: 10
         max-score: 12
+        
     - name: Deep-Dive Report
       id: deep-dive-report
       uses: classroom-resources/autograding-command-grader@v1
@@ -33,6 +33,7 @@ jobs:
         command: python autograder/autograder.py --check-file-2
         timeout: 10
         max-score: 12
+        
     - name: AI Log
       id: ai-log
       uses: classroom-resources/autograding-command-grader@v1
@@ -42,6 +43,7 @@ jobs:
         command: python autograder/autograder.py --check-file-3
         timeout: 10
         max-score: 12
+        
     - name: Workflow Diagram
       id: workflow-diagram
       uses: classroom-resources/autograding-command-grader@v1
@@ -51,33 +53,43 @@ jobs:
         command: python autograder/autograder.py --check-file-4
         timeout: 10
         max-score: 14
+        
     - name: SYSTEM_PROMPT
       id: system_prompt
       uses: classroom-resources/autograding-command-grader@v1
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
         test-name: SYSTEM_PROMPT
         setup-command: ''
         command: python autograder/autograder.py --check-code-1
         timeout: 10
         max-score: 10
+        
     - name: evaluate_prompt
       id: evaluate_prompt
       uses: classroom-resources/autograding-command-grader@v1
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
         test-name: evaluate_prompt
         setup-command: ''
         command: python autograder/autograder.py --check-code-2
         timeout: 10
         max-score: 10
+        
     - name: ADVERSARIAL_TESTS
       id: adversarial_tests
       uses: classroom-resources/autograding-command-grader@v1
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       with:
         test-name: ADVERSARIAL_TESTS
         setup-command: ''
         command: python autograder/autograder.py --check-code-3
         timeout: 10
         max-score: 10
+        
     - name: Prototype Script
       id: prototype-script
       uses: classroom-resources/autograding-command-grader@v1
@@ -89,6 +101,7 @@ jobs:
         command: python autograder/autograder.py --check-code-4
         timeout: 10
         max-score: 10
+        
     - name: Safety Verification
       id: safety-verification
       uses: classroom-resources/autograding-command-grader@v1
@@ -100,6 +113,7 @@ jobs:
         command: python autograder/autograder.py --check-code-5
         timeout: 10
         max-score: 10
+        
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
